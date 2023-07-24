@@ -35,6 +35,7 @@ const Step2 = ({ next, back }) => {
   const [plan, setPlan] = useAtom(userPlan); // String
   const [billing, setBilling] = useAtom(userBilling); //String
   const [value, setValue] = useAtom(userValue); //Number
+  const [error, setError] = useState(false);
 
   const [checked, setChecked] = useState(
     billing === "" || billing === "monthly"
@@ -43,16 +44,15 @@ const Step2 = ({ next, back }) => {
   const [choosedPlan, setChoosedPlan] = useState(null);
 
   const saveNext = () => {
-    // TODO não pode avançar sem escolher um plano
-
-    setPlan(plans[choosedPlan].type);
-    setBilling(checked ? "monthly" : "yearly");
-    const correctValue = checked
-      ? Number(plans[choosedPlan].value) //monthly
-      : Number(plans[choosedPlan].value * 10); // yearly
-    setValue(correctValue);
-
-    if (choosedPlan !== null) {
+    if (choosedPlan === null) {
+      setError(true);
+    } else {
+      setPlan(plans[choosedPlan].type);
+      setBilling(checked ? "monthly" : "yearly");
+      const correctValue = checked
+        ? Number(plans[choosedPlan].value) //monthly
+        : Number(plans[choosedPlan].value * 10); // yearly
+      setValue(correctValue);
       next();
     }
   };
@@ -131,6 +131,11 @@ const Step2 = ({ next, back }) => {
             Next Step
           </CustomButton>
         </div>
+        {error && (
+          <p className="text-center font-bold text-red-700 w-full">
+            You must choose a plan !
+          </p>
+        )}
       </div>
     </div>
   );

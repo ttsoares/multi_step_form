@@ -9,7 +9,7 @@ export const userPhone = atom("");
 export const userPlan = atom("Arcade"); //____<String>: Arcade/Advance/Pro
 export const userBilling = atom("monthly"); //_<String>:monthly/yearly
 export const userValue = atom(12); //___<Number>: 9/90, 12/120, 15/150
-export const userAddOns = atom([null, null, null]); //__<Boolean>:[... , ... , ...]
+export const userAddOns = atom([null, null, null]); //__Array:<Boolean>
 export const userConfirm = atom(false);
 
 import Step1 from "/components/Step1.jsx";
