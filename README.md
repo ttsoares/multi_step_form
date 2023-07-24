@@ -38,12 +38,10 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/ttsoares/multi_step_form)
+- Live Site URL: [Add live site URL here](https://multi-step-form-43c1.vercel.app/)
 
 ## My process
 
@@ -69,7 +67,7 @@ Exercised the conditional CSS classes:
 
 ### Continued development
 
-Learn more about useForms and stat coding in Typescript.
+Learn more about useForms and start coding in Typescript.
 
 ### Useful resources
 
